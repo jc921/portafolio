@@ -1,0 +1,181 @@
+
+/* importamos la fuente del titulo y el parrafo*/
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+/* hacemos uso de variables con el fin de optimizar la estilizacion y haciendo que sea mas sencillo 
+escribir codigo a la hora de acer alguna */
+
+/* para trabajar con variables en css hacemos uso de la seudo clase root  */
+:root{
+    /* las variables se declaran con dos guiones */
+    /*variables para nuestros colores */
+    --color-primario:#000000;
+    --color-secundario:#F6F6F6;
+    --color-terceario:#22D4F4;
+    --color-hover:#272727;
+
+    /* variables para nuestras fuentes */
+    --fuente-monserrat:"Montserrat", sans-serif;
+    --fuente-krona:"Krona One", sans-serif;
+}
+
+
+
+/*reseteamos los estilos por default de los navegadores 
+y le aplicamos estilos globales*/
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+body {
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+    /* agregamos una propiedad que impide que los elementos hijos 
+    salgan de los elementos padres */
+    box-sizing: border-box;
+
+}
+/* estilizando el hedaer */
+.header{
+    /* modificando el padding en una sola direccion */
+    padding: 2% 0% 0% 5%;
+
+}
+.header__menu{
+    display: flex;
+    gap: 80px;
+
+
+}
+.header__menu__link{
+    font-family: var(--fuente-monserrat);
+    /* usaremos unidades relativas para hacer accesible nuestro contenido en varios medios */
+    /* usaremos rem debido a sus propiedades simples  */
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-terceario);
+    text-decoration: none;
+
+}
+
+
+/* usamos flexbox */
+.presentacion{
+    display: flex;
+    /* para alinear los elementos en una poccicion en especifico usamos  */
+    align-items: center;
+    margin: 5%;
+    justify-content: space-between;
+    gap: 82px;
+}
+
+/* dando estilo al contenido */
+.presentacion__contenido{
+    width: 50%;
+    /* dando espacio entre el titulo, parrafo y botones*/
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.presentacion__contenido__titulo{
+    /* cambiamos el tamaño de la fuente del titulo */
+    font-size: 2.25rem;
+    /* cambiando la fuente del titulo */
+    font-family: var(--fuente-krona);
+}
+
+.titulo-destaque{
+    color: var(--color-terceario); 
+}
+
+.presentacion__contenido__texto{
+     /* cambiamos el tamaño de la fuente del parrafo */
+     font-size: 1.5rem;
+     /* cambiando la fuente del parrafo */
+     font-family: var(--fuente-monserrat);
+}
+
+/* estilo para los botones */
+.presentacion__enlaces{
+    display: flex;
+    justify-content: space-between;
+    /* pocicionamos los elementos subtitulo y botones en columnas */
+    flex-direction: column;
+    /* centramos los elementos deacuerdo a la posicion del eje donde se encuentra */
+    align-items: center;
+    gap: 32px;
+}
+
+.presentacion__enlaces__link{
+    width: 50%;
+    text-align: center;
+    padding: 21.5px 0;
+    border-radius: 8px;
+    font-family: var(--fuente-monserrat);
+    font-size: 1.5rem;
+    font-weight: 600;
+    /* quitamos el marcado del enlace en los botones */
+    text-decoration: none;
+    color: var(--color-secundario);
+    border: 2px solid var(--color-terceario) ;
+    /* alineando los iconos  */
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+/* dandole efectos de apariencia a los botones */
+.presentacion__enlaces__link:hover{
+    background-color: var(--color-hover);
+}
+
+/* estilizando el subtitulo de los enlaces */
+.presentacion__enlaces__subtitulo{
+    font-family: var(--fuente-krona);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+/* estilizando a la imagen */
+.presentacion__imagen{
+    width: 50%;
+}
+
+/* estilizando el footer */
+.footer{
+    background-color: var(--color-terceario);
+    padding: 24px;
+    color: var(--color-primario);
+    text-align: center;
+    font-family: var(--fuente-monserrat);
+    font-size: 1.5rem;
+    font-weight: 400;
+
+}
+
+/* definimos un breakpoint para telefonos */
+@media (max-width: 900px){
+    .header{
+        /* modificando el padding en una sola direccion */
+        padding: 10%;
+    
+    }
+
+    .header__menu{
+        justify-content: center;
+    }
+
+    .presentacion{
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+    .presentacion__contenido{
+        width: auto;
+    }
+
+}
